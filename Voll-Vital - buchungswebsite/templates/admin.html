@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin-Panel</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Admin-Bereich: Bearbeite Bewertungen</h1>
+
+    <form method="POST">
+        <label for="password">Passwort:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="content">Inhalt der reputation.txt:</label><br>
+        <textarea name="content" rows="10" cols="50">{{ content }}</textarea><br><br>
+
+        <button type="submit">Speichern</button>
+    </form>
+
+    <br>
+    <a href="/">Zurück zur Startseite</a>
+</body>
+</html>
