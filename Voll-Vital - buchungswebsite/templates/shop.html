@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite - Voll-Vital Wellness & Sportmassagen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Voll Vital Logo" class="logo-img">
+            <span>Voll Vital</span>
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Startseite</a></li>
+        
+        <li class="dropdown">
+            <a href="{{ url_for('shop') }}">Shop</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Faszienrollen</a></li>
+                <li><a href="#">Massagepistolen</a></li>
+                <li><a href="#">Fitnesszubehör</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="{{ url_for('training') }}">Training</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Mein Trainingsplan</a></li>
+                <li><a href="#">Übungen</a></li>
+                <li><a href="#">Tagebuch</a></li>
+            </ul>
+        </li>
+
+        <li><a href="{{ url_for('buchung') }}">Buchung</a></li>
+
+        <li class="dropdown">
+            <a href="{{ url_for('reputation') }}">Reputation</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Bewertungen lesen</a></li>
+                <li><a href="#">Bewertung schreiben</a></li>
+            </ul>
+        </li>
+
+        <li><a href="{{ url_for('vita') }}">Vita</a></li>
+    </ul>
+</nav>
+
+
+
+<!-- 🛍️ Shop-Bereich -->
+<div class="shop-container">
+    <h1>Faszienlösungs-Produkte</h1>
+
+    <div class="product-grid">
+        <!-- Produkt 1 -->
+        <div class="product-card">
+            <a href="{{ url_for('product_detail', product_id=1) }}">
+                <img src="{{ url_for('static', filename='shop/produkt1_main.jpg') }}" alt="Faszienrolle Pro">
+                <h3>Faszienrolle Pro</h3>
+            </a>
+            <p>Intensive Tiefengewebemassage zur Regeneration.</p>
+            <p><strong>Preis:</strong> 29,99€</p>
+        </div>
+
+        <!-- Produkt 2 -->
+        <div class="product-card">
+            <a href="{{ url_for('product_detail', product_id=2) }}">
+                <img src="{{ url_for('static', filename='shop/produkt2_main.jpg') }}" alt="Massagepistole X">
+                <h3>Massagepistole X</h3>
+            </a>
+            <p>Vielseitige Anwendung zur Muskelentspannung.</p>
+            <p><strong>Preis:</strong> 89,99€</p>
+        </div>
+
+        <!-- Produkt 3 -->
+        <div class="product-card">
+            <a href="{{ url_for('product_detail', product_id=3) }}">
+                <img src="{{ url_for('static', filename='shop/produkt3_main.jpg') }}" alt="Faszienball Duo">
+                <h3>Faszienball Duo</h3>
+            </a>
+            <p>Gezielte Triggerpunkt-Massage.</p>
+            <p><strong>Preis:</strong> 14,99€</p>
+        </div>
+
+        <!-- Produkt 4 -->
+        <div class="product-card">
+            <a href="{{ url_for('product_detail', product_id=4) }}">
+                <img src="{{ url_for('static', filename='shop/produkt4_main.jpg') }}" alt="Vibrationsplatte V2">
+                <h3>Vibrationsplatte V2</h3>
+            </a>
+            <p>Für effektives Ganzkörpertraining.</p>
+            <p><strong>Preis:</strong> 199,99€</p>
+        </div>
+
+        <!-- Produkt 5 -->
+        <div class="product-card">
+            <a href="{{ url_for('product_detail', product_id=5) }}">
+                <img src="{{ url_for('static', filename='shop/produkt5_main.jpg') }}" alt="Faszienband Stretch">
+                <h3>Faszienband Stretch</h3>
+            </a>
+            <p>Perfekt für Dehnübungen und Mobilität.</p>
+            <p><strong>Preis:</strong> 19,99€</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
