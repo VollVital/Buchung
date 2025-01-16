@@ -6,6 +6,33 @@ import random
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
 
+# Admin-Route zum Bearbeiten der reputation.txt
+@app.route('/admin', methods=['GET', 'POST'])
+def admin():
+    # Passworteingabe (ganz einfache Variante)
+    admin_password = "geheim123"
+
+    if request.method == 'POST':
+        # Passwort überprüfen
+        password = request.form.get('password')
+        if password != admin_password:
+            return "Falsches Passwort! <a href='/admin'>Zurück</a>"
+
+        # Inhalt speichern
+        new_content = request.form['content']
+        with open('reputation.txt', 'w') as file:
+            file.write(new_content)
+        return "Gespeichert! <a href='/admin'>Zurück</a>"
+
+    # Datei einlesen
+    if not os.path.exists('reputation.txt'):
+        open('reputation.txt', 'w').close()  # Datei erstellen, wenn sie fehlt
+
+    with open('reputation.txt', 'r') as file:
+        content = file.read()
+
+    return render_template('admin.html', content=content)
+
 # Ordner für Bewertungen, Avatare und Profilbilder
 if not os.path.exists('bewertungen'):
     os.makedirs('bewertungen')
