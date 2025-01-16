@@ -9,6 +9,7 @@ cryptography==44.0.0
 cycler==0.12.1
 Flask==3.1.0
 fonttools==4.55.3
+gunicorn==23.0.0
 idna==3.10
 itsdangerous==2.2.0
 Jinja2==3.1.5
