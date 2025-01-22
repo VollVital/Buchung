@@ -321,32 +321,6 @@ def send_message():
 if __name__ == '__main__':
     app.run(debug=True)
 
-@app.route('/load-reviews', methods=['GET'])
-def load_reviews():
-    try:
-        with open('reputation.txt', 'r') as file:
-            reviews = file.readlines()
-        return jsonify(reviews)
-    except Exception as e:
-        return str(e), 500
-
-@app.route('/delete-review', methods=['POST'])
-def delete_review():
-    try:
-        data = request.json
-        index = int(data.get('index')) - 1
-        with open('reputation.txt', 'r') as file:
-            reviews = file.readlines()
-        if 0 <= index < len(reviews):
-            reviews.pop(index)
-            with open('reputation.txt', 'w') as file:
-                file.writelines(reviews)
-            return 'Bewertung erfolgreich gelöscht.', 200
-        else:
-            return 'Ungültiger Index.', 400
-    except Exception as e:
-        return str(e), 500
-
 # Fehlerseite (404)
 @app.errorhandler(404)
 def page_not_found(e):
