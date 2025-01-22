@@ -699,21 +699,22 @@ footer {
 }
 
 .admin-login {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #216849;
-    color: white;
-    padding: 10px 15px;
+    position: fixed; /* Fixiert den Button an einer bestimmten Stelle */
+    bottom: 50px; /* Abstand vom unteren Rand, über dem Footer */
+    right: 20px; /* Abstand vom rechten Rand */
+    background-color: #1a5335; /* Dezentes Dunkelgrün für den Button */
+    color: white; /* Weiße Schrift */
+    padding: 8px 12px; /* Kompakte Größe */
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 1em;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px; /* Abgerundete Ecken */
+    font-size: 0.9em; /* Kleinere Schriftgröße */
+    z-index: 1500; /* Über dem Footer */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
     transition: background-color 0.3s ease;
 }
 
 .admin-login:hover {
-    background-color: #1a5335;
+    background-color: #134026; /* Etwas dunkler beim Hover */
 }
 
 
