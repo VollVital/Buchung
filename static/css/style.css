@@ -1,0 +1,907 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Globales Design */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f9ff;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+
+/* 🌐 Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #216849;
+    padding: 0 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Sticky Navbar */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 70px;
+    transition: all 0.3s ease;
+}
+
+/* Platz für die Navbar schaffen */
+main, section, header {
+    margin-top: 80px; /* Dynamischer Abstand zur Navbar */
+}
+
+@media (max-width: 768px) {
+    main, section, header {
+        margin-top: 100px; /* Mehr Abstand auf mobilen Geräten */
+    }
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.logo-img {
+    height: 45px;
+    margin-right: 10px;
+}
+
+/* 🌐 Menü (links ausgerichtet) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+
+/* Menü-Links */
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.impressum-navbar .admin-link {
+    display: none;
+}
+
+body.impressum .impressum-navbar .admin-link {
+    display: inline-block;
+}
+
+
+/* Hover-Effekt */
+.nav-links li a:hover {
+    background-color: #1a533a;
+    transform: scale(1.1);
+}
+
+/* 🎯 Dropdown-Menü */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #216849;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 5px 5px;
+    min-width: 180px;
+}
+
+.nav-links li:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+    color: #fff;
+}
+
+/* ☰ Burger-Menü für mobile Ansicht */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* 🌐 Responsives Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links {
+        display: flex !important;
+        flex-direction: column;
+        width: 100%;
+        background-color: #216849;
+        position: relative;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        padding: 15px;
+        font-size: 1.5em;
+    }
+
+    .burger {
+        display: none;
+    }
+}
+
+
+
+.cta-button {
+    background: linear-gradient(45deg, #34d399, #059669);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.2em;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Hero Section mit Bild */
+.hero-section {
+    background-image: url('/static/images/hero-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
+}
+
+.hero-section h1 {
+    font-size: 54px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1e7e34;
+}
+
+.btn-secondary {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #117a8b;
+}
+
+/* Vorschau-Bereiche */
+.overview {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.overview-item {
+    text-align: center;
+    width: 30%;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+}
+
+.overview-item:hover {
+    transform: translateY(-10px);
+}
+
+.overview-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0056b3;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Scroll-to-Top Button */
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+#scrollToTop:hover {
+    background-color: #003d80;
+}
+
+/* Responsives Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .overview {
+        flex-direction: column;
+    }
+
+    .overview-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 36px;
+    }
+}
+
+/* Durchschnittliche Sternebewertung */
+.average-rating {
+    text-align: center;
+    font-size: 2.5em;
+    color: #ffc107;
+    margin-bottom: 20px;
+}
+
+/* Sternebewertung */
+.rating {
+    direction: rtl; /* Für korrekte Verarbeitung der Sterne */
+    unicode-bidi: bidi-override;
+    display: inline-flex;
+}
+
+.rating input {
+    display: none; /* Versteckt die eigentlichen Radio-Buttons */
+}
+
+.rating label {
+    font-size: 4rem;
+    color: gray;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+    color: gold; /* Hebt Sterne beim Hover hervor */
+    transform: scale(1.2); /* Vergrößert die Sterne */
+}
+
+.rating input:checked ~ label {
+    color: gold; /* Markiert die ausgewählten Sterne */
+}
+
+
+
+
+/* Bewertungsformular */
+.review-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.review-form input[type="text"],
+.review-form textarea {
+    width: 80%;
+    padding: 15px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.review-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.review-form button {
+    background-color: #216849;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.review-form button:hover {
+    background-color: #1b553a;
+}
+
+/* Bewertungsanzeige */
+.review-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.review-item img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+.review-item .content {
+    flex: 1;
+}
+
+.review-item .username {
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.review-item .timestamp {
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Container */
+.vita-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #f0f8ff;
+}
+
+/* Profilkarten */
+.profiles {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.profile-card {
+    width: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover-Effekt */
+.profile-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Aaron und Grischa unterschiedliche Farben */
+.aaron {
+    background-color: #d0ebff;
+}
+
+.grischa {
+    background-color: #d9fdd3;
+}
+
+/* Bilder */
+.profile-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover-Effekt für Bilder */
+.profile-card img:hover {
+    transform: scale(1.1);
+}
+
+/* Upload-Button */
+.profile-card form {
+    margin-top: 15px;
+}
+
+.profile-card input[type="file"] {
+    margin-bottom: 10px;
+}
+
+.profile-card button {
+    background-color: #216849;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-card button:hover {
+    background-color: #1a533a;
+}
+
+/* 🌐 Navigation */
+.navbar {
+    background-color: #216849;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo a {
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: #1a533a;
+}
+
+/* 🛍️ Shop-Bereich */
+.shop-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Größere Kacheln */
+    gap: 40px; /* Mehr Abstand zwischen den Produkten */
+    padding: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    height: auto;
+}
+
+/* Hover-Effekt */
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover-Effekt für Bilder */
+.product-card img:hover {
+    transform: scale(1.1);
+}
+
+/* Produktbilder größer anzeigen */
+.product-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+/* 🎯 Hero-Bereich Training */
+.hero-training {
+    background-image: url("../images/training_hero.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-training h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-training p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.hero-training .btn {
+    background-color: #216849;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+/* 💪 Angebote */
+.training-offers {
+    text-align: center;
+    padding: 50px;
+    background-color: #f7f7f7;
+}
+
+.offers-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.offer-card {
+    background-color: #fff;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔄 Prozess */
+.training-process {
+    padding: 50px;
+    text-align: center;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.step {
+    width: 200px;
+}
+.contact-title {
+    text-align: center;
+    margin-bottom: 20px; /* Abstand zwischen Titel und Formular */
+    font-size: 1.8em; /* Optional: Schriftgröße anpassen */
+    color: #216849; /* Optional: Farbe des Titels */
+}
+
+
+/* 📞 Kontakt */
+.training-contact {
+    background-color: #216849;
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+/* 🌟 Größerer Hero-Bereich für Training */
+.hero-training {
+    background-image: url("../images/training_hero.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 200px 20px;  /* Erhöht die Höhe des Hero-Bereichs */
+    text-align: center;
+    color: #fff;
+}
+
+.hero-training h1 {
+    font-size: 3.5em; /* Größerer Titel */
+    margin-bottom: 15px;
+}
+
+.hero-training p {
+    font-size: 1.8em; /* Größere Unterzeile */
+    margin-bottom: 25px;
+}
+
+.hero-training .btn {
+    background-color: #216849;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.3em;
+    transition: background-color 0.3s ease;
+}
+
+.hero-training .btn:hover {
+    background-color: #1a533a;
+}
+
+.admin-login {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #216849;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.admin-login:hover {
+    background-color: #1a5335;
+}
+
+
+/* Admin Header */
+.admin-header {
+    background-color: #216849;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-header h1 {
+    margin: 0;
+}
+
+.admin-header .btn-secondary {
+    background-color: #1a5335;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.admin-header .btn-secondary:hover {
+    background-color: #134026;
+}
+
+/* Admin Container */
+.admin-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-container h2 {
+    color: #216849;
+    margin-bottom: 20px;
+}
+
+#reviews-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#reviews-table th, #reviews-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#reviews-table th {
+    background-color: #216849;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #216849;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1a5335;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1 {
+    text-align: center;
+    color: #216849;
+    margin-bottom: 20px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.login-container .btn-primary {
+    background-color: #216849;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container .btn-primary:hover {
+    background-color: #1a5335;
+}
+
+.footer-designed-by {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #216849;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 1000;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.footer-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shine 2.5s infinite;
+    pointer-events: none;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 0%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.designed-by {
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: 'Lobster', cursive;
+    color: #FFD700;
+    text-shadow: 0 0 10px black, 0 0 15px black, 0 0 20px black;
+    z-index: 10;
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px); /* Sanfte Bewegung nach rechts */
+    }
+}
