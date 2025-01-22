@@ -863,7 +863,12 @@ footer {
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
-
+body {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 80px; /* Platz für den Footer (Höhe des Footers) */
+    box-sizing: border-box;
+}
 .footer-glow {
     position: absolute;
     top: 0;
