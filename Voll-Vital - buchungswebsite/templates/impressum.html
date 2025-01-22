@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum - Voll-Vital Wellness & Sportmassagen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        
+        /* Kontaktformular Styling */
+        .contact-form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+            background-color: #216849;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #1a533a;
+        }
+    </style>
+</head>
+<body onload="showEmail(); showAddress();">
+
+<nav class="navbar">
+    <div class="logo">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Voll Vital Logo" class="logo-img">
+            <span>Voll Vital</span>
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Startseite</a></li>
+        <li><a href="{{ url_for('buchung') }}">Buchung</a></li>
+        <li><a href="{{ url_for('vita') }}">Vita</a></li>
+        <li><a href="{{ url_for('reputation') }}">Reputation</a></li>
+        <li><a href="{{ url_for('training') }}">Training</a></li>
+        <li><a href="{{ url_for('shop') }}">Shop</a></li>
+        <li><a href="{{ url_for('impressum') }}">Impressum</a></li>
+            </ul>
+</nav>
+
+<!-- Impressum Inhalt -->
+<section class="content-section">
+    <h1>Impressum</h1>
+    <p style="margin: 0; line-height: 1.5;">
+        <strong>Voll-Vital Wellness & Sportmassagen</strong><br>
+        Grischa Voll<br>
+        Am Weendespring 1b<br>
+        37077 Göttingen
+        
+    </p>
+</section>
+
+
+<!-- Kontaktformular -->
+<section class="content-section">
+    <h2 class="contact-title">Kontaktformular</h2>
+    <form class="contact-form" action="/send_message" method="POST">
+        <input type="text" name="name" placeholder="Ihr Name" required>
+        <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+        <textarea name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
+        <button type="submit">Nachricht senden</button>
+    </form>
+</section>
+
+<script>
+    // Funktion zum Schutz vor E-Mail-Scraping
+    function showEmail() {
+        const email = 'info.vollvital' + '@' + 'gmail.com';
+        document.getElementById('email-link').innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+    }
+
+    function showAddress() {
+        const address = 'am Weendespring 1b, 37077 Göttingen';
+        document.getElementById('address').innerText = address;
+    }
+</script>
+
+<div class="footer-designed-by">
+    <span class="designed-by">Website-Design by Aaron Ansari</span>
+</div>
+
+<div class="footer-designed-by">
+    <div class="footer-glow"></div>
+    <span class="designed-by">Website Designed by Aaron Ansari</span>
+</div>
+
+
+{% if session.get('admin_logged_in') %}
+<a href="{{ url_for('admin') }}" class="btn-primary">Zum Admin-Bereich</a>
+{% else %}
+<a href="{{ url_for('login') }}" class="admin-login">Admin Login</a>
+{% endif %}
+
+
+</body>
+</html>

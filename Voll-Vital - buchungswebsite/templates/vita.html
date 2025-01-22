@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite - Voll-Vital Wellness & Sportmassagen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Voll Vital Logo" class="logo-img">
+            <span>Voll Vital</span>
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Startseite</a></li>
+        <li><a href="{{ url_for('buchung') }}">Buchung</a></li>
+        <li><a href="{{ url_for('vita') }}">Vita</a></li>
+        <li class="dropdown">
+            <a href="{{ url_for('reputation') }}">Reputation</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Bewertungen lesen</a></li>
+                <li><a href="#">Bewertung schreiben</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="{{ url_for('training') }}">Training</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Mein Trainingsplan</a></li>
+                <li><a href="#">Übungen</a></li>
+                <li><a href="#">Tagebuch</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="{{ url_for('shop') }}">Shop</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Faszienrollen</a></li>
+                <li><a href="#">Massagepistolen</a></li>
+                <li><a href="#">Fitnesszubehör</a></li>
+            </ul>
+        </li>
+        <li><a href="{{ url_for('impressum') }}">Impressum</a></li>
+    </ul>
+</nav>
+
+
+<!-- 👥 Vita-Bereich -->
+<div class="vita-container">
+    <h1>Unser Team</h1>
+
+    <div class="profiles">
+        <!-- Aaron Ansari -->
+        <div class="profile-card aaron">
+            <h2>Aaron Ansari</h2>
+            <img src="{{ url_for('static', filename='profilbilder/aaron.jpg') }}" alt="Aaron Ansari">
+            <p>🎓 Master in Sportwissenschaft (Rehabilitation & Prävention) - Uni Göttingen</p>
+            <p>🛠️ Bachelor in Sportwissenschaft & VWL (2023)</p>
+            <p>🏥 Seit 2023 in der medizinischen Trainingstherapie im Rehazentrum</p>
+            <p>💆 Sportmasseur (2024, Akademie für Sport und Gesundheit)</p>
+        </div>
+
+        <!-- Grischa Voll -->
+        <div class="profile-card grischa">
+            <h2>Grischa Voll</h2>
+            <img src="{{ url_for('static', filename='profilbilder/grischa.jpg') }}" alt="Grischa Voll">
+            <p>🎓 B.A. Sportwissenschaften (SGP) - Abschluss 2019</p>
+            <p>📚 stellv. Leiter des Gesundheitszentrums WeendeVital</p>
+            <p>🧘 Yoga-Ausbildung</p>
+            <p>🩺 Heilpraktiker-Ausbildung (laufend)</p>
+            <p>📚 Physiotherapiestudium (angefangen)</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

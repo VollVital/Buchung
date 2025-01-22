@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite - Voll-Vital Wellness & Sportmassagen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Voll Vital Logo" class="logo-img">
+            <span>Voll Vital</span>
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Startseite</a></li>
+        <li><a href="{{ url_for('buchung') }}">Buchung</a></li>
+        <li><a href="{{ url_for('vita') }}">Vita</a></li>
+        <li class="dropdown">
+            <a href="{{ url_for('reputation') }}">Reputation</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Bewertungen lesen</a></li>
+                <li><a href="#">Bewertung schreiben</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="{{ url_for('training') }}">Training</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Mein Trainingsplan</a></li>
+                <li><a href="#">Übungen</a></li>
+                <li><a href="#">Tagebuch</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="{{ url_for('shop') }}">Shop</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Faszienrollen</a></li>
+                <li><a href="#">Massagepistolen</a></li>
+                <li><a href="#">Fitnesszubehör</a></li>
+            </ul>
+        </li>
+        <li><a href="{{ url_for('impressum') }}">Impressum</a></li>
+        {% if request.endpoint == 'impressum' %}
+        <li><a href="{{ url_for('admin') }}">Admin</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+<!-- Hero Section mit Bild -->
+<header class="hero-section">
+    <h1>Willkommen bei Voll-Vital!</h1>
+    <p>Entspanne dich mit unseren Wellness- und Sportmassagen.</p>
+    <a href="/buchung" class="btn-primary">Jetzt Termin buchen</a>
+</header>
+
+<!-- Vorschau-Bereiche -->
+<section class="overview">
+    <div class="overview-item">
+        <img src="{{ url_for('static', filename='images/massage.jpg') }}" alt="Wellness Massage">
+        <h3>Wellness Massagen</h3>
+        <p>Erholung pur für Körper und Geist.</p>
+        <div style="margin-top: 20px;">
+            <a href="/buchung" class="btn-secondary">Mehr erfahren</a>
+        </div>
+    </div>
+    <div class="overview-item">
+        <img src="{{ url_for('static', filename='images/sportmassage.jpg') }}" alt="Sportmassage">
+        <h3>Sportmassagen</h3>
+        <p>Optimale Regeneration nach dem Training.</p>
+        <div style="margin-top: 20px;">
+            <a href="/buchung" class="btn-secondary">Jetzt buchen</a>
+        </div>
+    </div>
+</section>
+
+<!-- Scroll-to-Top Button -->
+<button onclick="topFunction()" id="scrollToTop" title="Nach oben">↑</button>
+
+<script>
+    let scrollToTopBtn = document.getElementById("scrollToTop");
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    };
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite - Voll-Vital Wellness & Sportmassagen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- 🌐 Navbar mit Burger-Menü -->
+<nav class="navbar">
+    <div class="logo">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Voll Vital Logo" class="logo-img">
+            <span>Voll Vital</span>
+        </a>
+    </div>
+
+    <!-- Burger-Menü für Mobile -->
+    <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Startseite</a></li>
+        <li><a href="{{ url_for('buchung') }}">Buchung</a></li>
+        <li><a href="{{ url_for('vita') }}">Vita</a></li>
+        <li class="dropdown">
+            <a href="{{ url_for('reputation') }}">Reputation</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Bewertungen lesen</a></li>
+                <li><a href="#">Bewertung schreiben</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="{{ url_for('training') }}">Training</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Mein Trainingsplan</a></li>
+                <li><a href="#">Übungen</a></li>
+                <li><a href="#">Tagebuch</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="{{ url_for('shop') }}">Shop</a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Faszienrollen</a></li>
+                <li><a href="#">Massagepistolen</a></li>
+                <li><a href="#">Fitnesszubehör</a></li>
+            </ul>
+        </li>
+        <li><a href="{{ url_for('impressum') }}">Impressum</a></li>
+      
+    </ul>
+</nav>
+
+<!-- JavaScript für Burger-Menü -->
+<script>
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
+
+
+
+<!-- SimplyBook Widget -->
+<div class="container">
+    <h1>Buchung</h1>
+    <p>Buche jetzt deinen Termin direkt hier:</p>
+
+    <!-- Integration des SimplyBook Widgets -->
+    <script src="//widget.simplybook.it/v2/widget/widget.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var widget = new SimplybookWidget({
+            "widget_type": "iframe",
+            "url": "https://vollvital.simplybook.it",
+            "theme": "default",
+            "theme_settings": {
+                "timeline_hide_unavailable": "1",
+                "hide_past_days": "0",
+                "timeline_show_end_time": "0",
+                "timeline_modern_display": "as_slots",
+                "sb_base_color": "#216849",
+                "display_item_mode": "block",
+                "booking_nav_bg_color": "#216849",
+                "body_bg_color": "#f7f7f7",
+                "dark_font_color": "#333333",
+                "light_font_color": "#ffffff",
+                "btn_color_1": "#6b9080",
+                "sb_company_label_color": "#ffffff",
+                "hide_img_mode": "1",
+                "show_sidebar": "1",
+                "sb_busy": "#c7b3b3",
+                "sb_available": "#d6ebff"
+            },
+            "timeline": "modern",
+            "datepicker": "top_calendar",
+            "is_rtl": false,
+            "app_config": {
+                "clear_session": 0,
+                "allow_switch_to_ada": 0,
+                "predefined": []
+            }
+        });
+    </script>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Dein Fitness Coach. Alle Rechte vorbehalten.</p>
+</footer>
+
+</body>
+</html>
